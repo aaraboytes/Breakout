@@ -599,12 +599,12 @@ GameObject:
   - component: {fileID: 236659040}
   - component: {fileID: 236659039}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: GameOverPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &236659038
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3977,13 +3977,16 @@ MonoBehaviour:
   increment: 0.01
   powerUps:
   - {fileID: 8980804759101403457, guid: b2a429740f9cae64c8bda0faecc7cd4c, type: 3}
+  - {fileID: 132462760779042052, guid: 346fed34adb5345419b6033845c224f4, type: 3}
+  - {fileID: 4371025964527809409, guid: eb1044c2294a50449a1d245f6908d4f0, type: 3}
+  - {fileID: 4596206019921129282, guid: e277c5ed5928c114a84b276ce3c0b6fd, type: 3}
   ballSpeed: 0
   lives:
   - {fileID: 517301700}
   - {fileID: 1060740725}
   - {fileID: 738677764}
   scoreText: {fileID: 672377919}
-  gameOverPanel: {fileID: 0}
+  gameOverPanel: {fileID: 236659037}
   ballPrefab: {fileID: 3202266885919169805, guid: 183312b61a9c9dd428593216f1b9c4ae,
     type: 3}
   brickBreakSound: {fileID: 8300000, guid: 64f71e22b511b70488960ea2b68d5cd3, type: 3}
