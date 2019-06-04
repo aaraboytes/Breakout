@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 public class LevelManager : MonoBehaviour
@@ -20,7 +21,7 @@ public class LevelManager : MonoBehaviour
     int bricks = 0;
     int lifes;
     float speed;
-    Ball ball;
+    [SerializeField]Ball ball;
 
     //Extra ball
     [SerializeField] GameObject ballPrefab;
@@ -32,14 +33,18 @@ public class LevelManager : MonoBehaviour
     AudioSource audio;
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+            Instance = this;
+        else if(Instance != this)
+            Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
         ball = FindObjectOfType<Ball>();
         lifes = maxLifes;
         bricks = FindObjectsOfType<Brick>().Length;
-        scoreText.text = "Score : 000000";
+
         GameOver = false;
         ballSpeed = FindObjectOfType<Ball>().GetSpeed();
         audio = GetComponent<AudioSource>();
@@ -60,6 +65,14 @@ public class LevelManager : MonoBehaviour
         if (bricks<= 0)
         {
             Debug.Log("Win");
+            int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+            if (nextScene == 10)
+                print("Game ended");
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                Invoke("FindBall", 0.5f);
+            }
         }
     }
     public void SpawnItem(Vector2 pos)
@@ -68,12 +81,12 @@ public class LevelManager : MonoBehaviour
         pu.transform.position = pos;
         pu.GetComponent<Rigidbody2D>().velocity = Vector2.down * 1.5f;
     }
-    public bool Damage(GameObject ball)
+    public bool Damage(GameObject ballgo)
     {
         if (currentBallsInScene > 1)
         {
-            Destroy(ball);
-            ball = FindObjectOfType<Ball>().gameObject;
+            Destroy(ballgo);
+            ball = FindObjectOfType<Ball>();
             FindObjectOfType<Paddle>().EndPowerUp();
             currentBallsInScene--;
             return true;
@@ -103,5 +116,21 @@ public class LevelManager : MonoBehaviour
         extraBall.transform.position = pos;
         extraBall.GetComponent<Ball>().holded = false;
         extraBall.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-10, 10), Random.Range(5, 10)).normalized * ballSpeed;
+    }
+    public void Retry()
+    {
+        lifes = maxLifes;
+        score = 0;
+        GameOver = false;
+        for(int i = 0; i < 3; i++)
+        {
+            lives[i].enabled = true;
+        }
+        Invoke("FindBall", 0.5f);
+    }
+    void FindBall()
+    {
+        ball = FindObjectOfType<Ball>();
+        bricks = FindObjectsOfType<Brick>().Length;
     }
 }
