@@ -30,7 +30,11 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3, y: 4, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.41}
+=======
+  m_LocalScale: {x: 0.09651692, y: 0.024933329, z: 0.024933329}
+>>>>>>> b3602fef9f8dfa00f0922f35c1526c0f02d57b4a
 =======
   m_LocalScale: {x: 0.09651692, y: 0.024933329, z: 0.024933329}
 >>>>>>> b3602fef9f8dfa00f0922f35c1526c0f02d57b4a
@@ -76,8 +80,13 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Sprite: {fileID: 21300000, guid: 3630f84d27334e24b9075b719aecdbfc, type: 3}
   m_Color: {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
+=======
+  m_Sprite: {fileID: 21300000, guid: 094b3162bee01d04b85c02f38b91e760, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+>>>>>>> b3602fef9f8dfa00f0922f35c1526c0f02d57b4a
 =======
   m_Sprite: {fileID: 21300000, guid: 094b3162bee01d04b85c02f38b91e760, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -146,7 +155,11 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
 <<<<<<< HEAD
+<<<<<<< HEAD
     oldSize: {x: 6.48, y: 6.43}
+=======
+    oldSize: {x: 17.54, y: 17.53}
+>>>>>>> b3602fef9f8dfa00f0922f35c1526c0f02d57b4a
 =======
     oldSize: {x: 17.54, y: 17.53}
 >>>>>>> b3602fef9f8dfa00f0922f35c1526c0f02d57b4a
@@ -157,7 +170,11 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Size: {x: 6, y: 6}
+=======
+  m_Size: {x: 17.54, y: 17.53}
+>>>>>>> b3602fef9f8dfa00f0922f35c1526c0f02d57b4a
 =======
   m_Size: {x: 17.54, y: 17.53}
 >>>>>>> b3602fef9f8dfa00f0922f35c1526c0f02d57b4a
