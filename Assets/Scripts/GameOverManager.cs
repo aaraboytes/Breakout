@@ -8,5 +8,7 @@ public class GameOverManager : MonoBehaviour
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        LevelManager.Instance.Retry();
+        gameObject.SetActive(false);
     }
 }
