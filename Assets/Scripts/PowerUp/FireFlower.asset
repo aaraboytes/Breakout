@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99b03c1f9c57494daaf6f62a3b2d7e1, type: 3}
   m_Name: FireFlower
   m_EditorClassIdentifier: 
-  name: FireFlower
-  time: 0
+  name: Fireflower
+  time: 5000
   timeable: 0

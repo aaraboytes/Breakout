@@ -65,6 +65,7 @@ public class LevelManager : MonoBehaviour
         if (bricks<= 0)
         {
             Debug.Log("Win");
+            FindObjectOfType<Paddle>().EndPowerUp();
             int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
             if (nextScene == 10)
                 print("Game ended");
@@ -77,7 +78,7 @@ public class LevelManager : MonoBehaviour
     }
     public void SpawnItem(Vector2 pos)
     {
-        GameObject pu = Instantiate(powerUps[Random.Range(0, powerUps.Length - 1)]);
+        GameObject pu = Instantiate(powerUps[Random.Range(0, powerUps.Length )]);
         pu.transform.position = pos;
         pu.GetComponent<Rigidbody2D>().velocity = Vector2.down * 1.5f;
     }

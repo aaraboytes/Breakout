@@ -22,6 +22,8 @@ public class Brick : MonoBehaviour
         }
         else
             DestroyThisBrick();
+        if (collision.gameObject.GetComponent<Fire>())
+            Destroy(collision.gameObject);
     }
     public void DestroyThisBrick()
     {
